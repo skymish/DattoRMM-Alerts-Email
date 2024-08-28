@@ -183,14 +183,14 @@ function Get-DRMMDeviceStatusSection {
     )
 
     # Generate CPU/ RAM Use Data
-    $CPUData = $Device.udf."udf$CPUUDF" | convertfrom-json
-    $RAMData = $Device.udf."udf$RAMUDF" | convertfrom-json
+    # $CPUData = $Device.udf."udf$CPUUDF" | convertfrom-json
+    # $RAMData = $Device.udf."udf$RAMUDF" | convertfrom-json
 
-    $CPUUse = $CPUData.T
-    $RAMUse = $RAMData.T
+    # $CPUUse = $CPUData.T
+    # $RAMUse = $RAMData.T
 
-    $CPUTable = Get-DecodedTable -TableString $CPUData.D -UseValue '%' | convertto-html -Fragment
-    $RAMTable = Get-DecodedTable -TableString $RAMData.D -UseValue 'GBs' | convertto-html -Fragment
+    # $CPUTable = Get-DecodedTable -TableString $CPUData.D -UseValue '%' | convertto-html -Fragment
+    # $RAMTable = Get-DecodedTable -TableString $RAMData.D -UseValue 'GBs' | convertto-html -Fragment
 
     $DiskData = $DeviceAudit.logicalDisks | where-object { $_.freespace }
 
@@ -228,7 +228,7 @@ function Get-DRMMDeviceStatusSection {
                                     <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;"
                                         class="stack-column-center">
                                         <h2>CPU Usage $($CPUUse)%</h2>
-                                        $CPUTable
+                                        # $CPUTable
                                     </td>
                                 </tr>
                             </table>
@@ -247,7 +247,7 @@ function Get-DRMMDeviceStatusSection {
                                     <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;"
                                         class="stack-column-center">
                                         <h2>RAM Usage $($RAMUse)%</h2>
-                                        $RAMTable
+                                        # $RAMTable
                                     </td>
                                 </tr>
                             </table>
