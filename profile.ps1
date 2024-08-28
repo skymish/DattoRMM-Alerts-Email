@@ -12,9 +12,9 @@
 # Authenticate with Azure PowerShell using MSI.
 # Remove this if you are not planning on using MSI or Azure PowerShell.
 
-# foreach($file in Get-ChildItem -Path "$PSScriptRoot\Modules" -Filter *.psm1){
-#     Import-Module $file.fullname
-# }
+foreach($file in Get-ChildItem -Path "$PSScriptRoot\Modules" -Filter *.psm1){
+    Import-Module $file.fullname
+}
 import-module DattoRMM
 
 # Uncomment the next line to enable legacy AzureRm alias in Azure PowerShell.
